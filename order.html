@@ -3,11 +3,11 @@
 <head>
 <title>PC Order</title>
        <meta name="author" content="EDCC" />
-       <meta name="keywords" content="final project 'PC Superstore', based on wireframe" />
-       <meta name="description" content="This template is intended to be used as a base to build my PC Superstore web page." />
+       <meta name="keywords" content="final project 'Pizza Parlor', based on wireframe" />
+       <meta name="description" content="This template is intended to be used as a base to build my Pizza Parlor web page." />
        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
        <meta name="robots" content="none" />
-	   <link rel="stylesheet" href="pcStyle.css" type="text/css" />
+	   <link rel="stylesheet" href="pizzaStyle.css" type="text/css" />
 		<script type="text/javascript" src="library.js"></script>
 	   <script type="text/javascript" src="cookies.js"></script>
 </head>
@@ -23,14 +23,14 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<img src="graphics/pc.jpeg" width="238" height="120" alt="" border="0">
+			<img src="images/pizza.jpg" width="238" height="120" alt="" border="0">
 		</td>
-		<td valign="bottom" class="header">PCSuperstoreExample.com Aaron Ekdahl</td>
+		<td valign="bottom" class="header">Mr. Gattis Pizza</td>
 		<td width="1px">&nbsp;</td>
 		<td width="300" valign="bottom" class="contact">
-			5555 West Elm St.<br />
-			Lynnwood, WA 98026<br />
-			425.555.5791
+			1460 E US Highway 377<br />
+			Granbury, TX 76048<br />
+			817.579.7777
 		</td>
 	</tr>
 	<tr>
@@ -45,23 +45,24 @@
 			<a href="order.html" class="orderSum">Order Now</a>
 		</td>
 		<td rowspan="2" width="1" style="background-color: White;"></td>
-		
+
 		<td valign="top" class="menu" width="1000">
 			<form>
 			<table class="menu" border="0" width="100%">
 				<tr>
-					<td valign="top">Select your PC size:</td>
+					<td valign="top">Select your Pizza size:</td>
 					<td>
-						<input type="radio" name="rdoSize" value="1" onclick="return orderSummary()" /> Desktop<br />
-						<input type="radio" name="rdoSize" value="2" checked="checked" onclick="return orderSummary()" /> Workstation<br />
-						<input type="radio" name="rdoSize" value="3" onclick="return orderSummary()" /> Server<br />
+						<input type="radio" name="rdoSize" value="1" onclick="return orderSummary()" /> Small<br />
+						<input type="radio" name="rdoSize" value="2" checked="checked" onclick="return orderSummary()" /> Medium<br />
+						<input type="radio" name="rdoSize" value="3" onclick="return orderSummary()" /> Large<br />
+            <input type="radio" name="rdoSize" value="4" onclick="return orderSummary()" /> X-Large<br />
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr style="background-color:white" /></td>
 				</tr>
 				<tr>
-					<td valign="top">Select your warranty type:</td>
+					<td valign="top">Select your Sauce type:</td>
 					<td valign="top" nowrap="nowrap">
 						<input type="radio" name="rdoWarranty" value="ht" checked="checked" onclick="return orderSummary()" /> 1 year<br />
 						<input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()" /> 2 years
@@ -70,7 +71,7 @@
 				<tr>
 					<td colspan="2"><hr style="background-color:white" /></td>
 				</tr>
-				
+
 			</table>
 			</form>
 		</td>

@@ -1,20 +1,20 @@
 body {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	background-color: #777777;
+	background-color: black;
 
 
 }
 
 .menu{
-	background-color: hsla(245, 20%, 10%, 1);
+	background-color: hsla(360, 100%, 12%, 1);
 	color: white;
 }
 .header{
-	background-color: hsla(245, 20%, 10%, 1);
+	background-color: hsla(360, 100%, 12%, 1);
 	color: White;
 	text-shadow: 2px 2px 2px #000;
 	font-size: xx-large;
-	
+
 }
 .contact{
 	font-size:xx-small;
@@ -27,4 +27,4 @@ body {
 }
 .options {
 	visibility: hidden;
-} 
+}
