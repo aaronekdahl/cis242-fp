@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mr. Gattis Pizza</title>
+<title>Boxcar Pizza Company</title>
   <meta name="author" content="EDCC"/>
   <meta name="keywords" content="final project 'Pizza Parlor', based on wireframe"/>
   <meta name="description" content="This template is intended to be used as a base to build my Pizza Parlor web page."/>
@@ -28,7 +28,7 @@
 		<td colspan="2">
       <img src="images/pizza.jpg"  height="130" alt="" border="0">
 		</td>
-		<td valign="bottom" class="header">Pizza The Hut</td>
+		<td valign="bottom" class="header">Boxcar Pizza Company</td>
 		<td width="1px">&nbsp;</td>
 		<td width="300" valign="bottom" class="contact">
 			1460 E US Highway 377<br />
@@ -63,8 +63,8 @@
         <tr>
           <td valign="top">Select your Pizza type:</td>
           <td>
-            <input type="radio" name="rdoSize" value="1" checked="checked" onclick="return orderSummary()"/> Build-Your-Own Pizza<br/>
-            <input type="radio" name="rdoSize" value="2" onclick="return orderSummary()"/> Specialty (Choose from 3)<br/>
+            <input type="radio" name="rdoType" value="1" checked="checked" onclick="return orderSummary()"/> Build-Your-Own Pizza<br/>
+            <input type="radio" name="rdoType" value="2" onclick="return orderSummary()"/> Specialty (Choose from 3)<br/>
           </td>
         </tr>
   <!---end-pizza-type-selection--->
@@ -77,9 +77,9 @@
         <tr>
           <td valign="top">Select your Pizza Size:</td>
           <td valign="top" nowrap="nowrap">
-            <input type="radio" name="rdoWarranty" value="ht" checked="checked" onclick="return orderSummary()"/> Small (12")<br />
-            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Medium (14")<br/>
-            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Large (16")<br/>
+            <input type="radio" name="rdoSize" value="1" checked="checked" onclick="return orderSummary()"/> Small (12")<br/>
+            <input type="radio" name="rdoSize" value="2"  onclick="return orderSummary()"/> Medium (14")<br/>
+            <input type="radio" name="rdoSize" value="3"  onclick="return orderSummary()"/> Large (16")<br/>
           </td>
         </tr>
   <!---end-pizza-size-selection--->
@@ -92,9 +92,9 @@
         <tr>
           <td valign="top">Select your Pizza Crust:</td>
           <td valign="top" nowrap="nowrap">
-            <input type="radio" name="rdoWarranty" value="ht" checked="checked" onclick="return orderSummary()"/> Deep Dish<br />
-            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Regular Crust<br/>
-            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Thin Crust<br/>
+            <input type="radio" name="rdoCrust" value="1" checked="checked" onclick="return orderSummary()"/> Deep Dish<br />
+            <input type="radio" name="rdoCrust" value="2"  onclick="return orderSummary()"/> Hand-Tossed<br/>
+            <input type="radio" name="rdoCrust" value="3"  onclick="return orderSummary()"/> Crispy Thin Crust<br/>
           </td>
         </tr>
   <!---end-pizza-crust-selection--->
@@ -107,7 +107,7 @@
 
 		<td rowspan="2" width="1" style="background-color: White;"></td>
 		<td class="orderSum" valign="top">
-			<div id="orderSum" style="height: 175px">Order Summary: <br />Workstation 1 year Warranty <br /></div>
+			<div id="orderSum" style="height: 175px">Order Summary: <br />Pizza Summary <br /></div>
 			<br /><br /><br />
 			<div id="priceSum">
 			<table width="100%"> <tr><td>Subtotal:</td> <td align='right'></td></tr><tr><td>Tax:</td> <td align="right" style="border-bottom-color: White; border-bottom-width: 1px; border-bottom-style: solid;"></td></tr><tr> <td>Total:</td> <td align='right'></td></tr></table>
