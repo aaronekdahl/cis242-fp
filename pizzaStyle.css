@@ -1,30 +1,33 @@
 body {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	background-color: black;
-
-
+	background-color: white;
+	color: black;
 }
 
-.menu{
-	background-color: hsla(360, 100%, 12%, 1);
+.menu	{
+	background-color: rgb(0, 100, 145)/*hsla(360, 100%, 12%, 1)*/;
 	color: white;
 }
-.header{
-	background-color: hsla(360, 100%, 12%, 1);
-	color: White;
-	text-shadow: 2px 2px 2px #000;
-	font-size: xx-large;
 
-}
-.contact{
-	font-size:xx-small;
+.header	{
+	background-color: rgb(0, 100, 145)/*hsla(360, 100%, 12%, 1)*/;
 	color: White;
-	text-shadow: 2px 2px 2px #000;
+	/*text-shadow: 2px 2px 2px #000;*/
+	font-size: xx-large;
+}
+
+.contact	{
+	font-size:xx-small;
+	color: black;
+	/*text-shadow: 2px 2px 2px #000;*/
 	text-align: right;
 }
-.orderSum{
-	color:white;
+
+.orderSum	{
+	background-color: rgb(0, 100, 145);
+	color: white;
 }
+
 .options {
 	visibility: hidden;
 }

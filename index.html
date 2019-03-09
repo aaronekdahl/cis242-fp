@@ -2,15 +2,16 @@
 <html>
 <head>
 <title>Mr. Gattis Pizza</title>
-       <meta name="author" content="EDCC" />
-       <meta name="keywords" content="final project 'Pizza Parlor', based on wireframe" />
-       <meta name="description" content="This template is intended to be used as a base to build my Pizza Parlor web page." />
-       <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-       <meta name="robots" content="none" />
-	   <link rel="stylesheet" href="pizzaStyle.css" type="text/css" />
-		<script type="text/javascript" src="library.js"></script>
-	   <script type="text/javascript" src="cookies.js"></script>
+  <meta name="author" content="EDCC"/>
+  <meta name="keywords" content="final project 'Pizza Parlor', based on wireframe"/>
+  <meta name="description" content="This template is intended to be used as a base to build my Pizza Parlor web page."/>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta name="robots" content="none"/>
+	<link rel="stylesheet" href="pizzaStyle.css" type="text/css"/>
+  <script type="text/javascript" src="library.js"></script>
+	<script type="text/javascript" src="cookies.js"></script>
 </head>
+
 <body>
 <table name="main" cellpadding="5" width="100%" border="0">
 	<tr>
@@ -21,11 +22,13 @@
 		<td></td>
 		<td></td>
 	</tr>
+
+<!---start-header--->
 	<tr>
 		<td colspan="2">
-			<img src="images/pizza.jpg" width="238" height="120" alt="" border="0">
+      <img src="images/pizza.jpg"  height="130" alt="" border="0">
 		</td>
-		<td valign="bottom" class="header">Mr. Gattis Pizza</td>
+		<td valign="bottom" class="header">Pizza The Hut</td>
 		<td width="1px">&nbsp;</td>
 		<td width="300" valign="bottom" class="contact">
 			1460 E US Highway 377<br />
@@ -38,43 +41,70 @@
 			<hr style="background-color:white" />
 		</td>
 	</tr>
+<!---end-header--->
+
+<!---start-site-navigation--->
 	<tr>
 		<td rowspan="2" valign="top" nowrap="nowrap" class="orderSum">
 			<a href="home.html" class="orderSum">Home</a><br />
 			<a href="contact.html" class="orderSum">Contact Us</a><br />
 			<a href="order.html" class="orderSum">Order Now</a>
 		</td>
+<!---end-site-navigation--->
+
 		<td rowspan="2" width="1" style="background-color: White;"></td>
 
-		<td valign="top" class="menu" width="1000">
-			<form>
-			<table class="menu" border="0" width="100%">
-				<tr>
-					<td valign="top">Select your Pizza size:</td>
-					<td>
-						<input type="radio" name="rdoSize" value="1" onclick="return orderSummary()" /> Small<br />
-						<input type="radio" name="rdoSize" value="2" checked="checked" onclick="return orderSummary()" /> Medium<br />
-						<input type="radio" name="rdoSize" value="3" onclick="return orderSummary()" /> Large<br />
-            <input type="radio" name="rdoSize" value="4" onclick="return orderSummary()" /> X-Large<br />
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><hr style="background-color:white" /></td>
-				</tr>
-				<tr>
-					<td valign="top">Select your Sauce type:</td>
-					<td valign="top" nowrap="nowrap">
-						<input type="radio" name="rdoWarranty" value="ht" checked="checked" onclick="return orderSummary()" /> 1 year<br />
-						<input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()" /> 2 years
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><hr style="background-color:white" /></td>
-				</tr>
+<!---start-pizza-menu--->
 
-			</table>
-			</form>
-		</td>
+  <!---start-pizza-type-selection--->
+    <td valign="top" class="menu" width="1000">
+      <form>
+      <table class="menu" border="0" width="100%">
+        <tr>
+          <td valign="top">Select your Pizza type:</td>
+          <td>
+            <input type="radio" name="rdoSize" value="1" checked="checked" onclick="return orderSummary()"/> Build-Your-Own Pizza<br/>
+            <input type="radio" name="rdoSize" value="2" onclick="return orderSummary()"/> Specialty (Choose from 3)<br/>
+          </td>
+        </tr>
+  <!---end-pizza-type-selection--->
+
+        <tr>
+          <td colspan="2"><hr style="background-color:white" /></td>
+        </tr>
+
+  <!---start-pizza-size-selection--->
+        <tr>
+          <td valign="top">Select your Pizza Size:</td>
+          <td valign="top" nowrap="nowrap">
+            <input type="radio" name="rdoWarranty" value="ht" checked="checked" onclick="return orderSummary()"/> Small (12")<br />
+            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Medium (14")<br/>
+            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Large (16")<br/>
+          </td>
+        </tr>
+  <!---end-pizza-size-selection--->
+
+        <tr>
+          <td colspan="2"><hr style="background-color:white" /></td>
+        </tr>
+
+  <!---start-pizza-crust-selection--->
+        <tr>
+          <td valign="top">Select your Pizza Crust:</td>
+          <td valign="top" nowrap="nowrap">
+            <input type="radio" name="rdoWarranty" value="ht" checked="checked" onclick="return orderSummary()"/> Deep Dish<br />
+            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Regular Crust<br/>
+            <input type="radio" name="rdoWarranty" value="dd"  onclick="return orderSummary()"/> Thin Crust<br/>
+          </td>
+        </tr>
+  <!---end-pizza-crust-selection--->
+      </table>
+      </form>
+    </td>
+<!---end-pizza-menu--->
+
+<!---start-order-summary--->
+
 		<td rowspan="2" width="1" style="background-color: White;"></td>
 		<td class="orderSum" valign="top">
 			<div id="orderSum" style="height: 175px">Order Summary: <br />Workstation 1 year Warranty <br /></div>
@@ -84,11 +114,15 @@
 			</div>
 		</td>
 	</tr>
+<!---end-order-summary--->
+
+<!---start-submit-form--->
 	<tr>
-		<td valign="top" class="menu" width="1000">
+		<td valign="top" class="menu" width="1000px">
 			<center><input type="button" onclick="return writePCCookies()" value="Submit Your Order"></center>
 		</td>
 	</tr>
+  <!---end-submit-form--->
 </table>
 
 
