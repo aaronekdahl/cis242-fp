@@ -12,6 +12,7 @@ var OptionPrice = [
 ];
 
 var fltBase = 0.0;
+var fltTop = 2.0;
 var fltTaxRate = 0.095;
 
 /*
@@ -22,9 +23,13 @@ parameters:		none
 function orderSummary(){
 
 	var fltSub = fltBase;
+  var fltTop = 0;
+  var fltSpecial = 0;
   var intType= 1;
 	var intSize = 1;
   var intCrust = 1;
+  var intTop = 1;
+  var intSpecial= 0;
 	var intWarranty = 0;
 	var fltTax = 0;
 	var fltTotal = 0;
@@ -44,10 +49,10 @@ function orderSummary(){
 	// set the DHTML display to include the type
 	switch(intType){
 		case 0:
-		  strPizza = strPizza + '<br/>Build-Your-Own ';
+		  strPizza = strPizza + '<br/> Specialty ';
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Specialty ';
+		  strPizza = strPizza + '<br/> Build-Your-Own ';
 		  break;
 	}
 
@@ -61,15 +66,15 @@ function orderSummary(){
 	// set the DHTML display to include the size
 	switch(intSize){
 		case 0:
-		  strPizza = strPizza + '<br/>Small ';
+		  strPizza = strPizza + '<br/>Small 12" ';
 		  fltSub = 12.95;
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Medium ';
+		  strPizza = strPizza + '<br/>Medium 14" ';
 		  fltSub = 16.95;
 		  break;
 		case 2:
-		  strPizza = strPizza + '<br/>Large ';
+		  strPizza = strPizza + '<br/>Large 16" ';
 		  fltSub = 20.95;
 		  break;
 	}
@@ -93,6 +98,64 @@ function orderSummary(){
 		  strPizza = strPizza + '<br/>Crispy Thin Crust ';
 		  break;
 	}
+
+  // check to see which special is chosen
+  for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
+    if (document.forms[0].rdoSpecial[i].checked){
+      intSpecial = i;
+    }
+  }
+
+  // set the DHTML display to include the special
+  switch(intSpecial){
+    case 0:
+      strPizza = strPizza + '<br/>Meat Lovers ';
+      fltSub += fltSpecial;
+      break;
+    case 1:
+      strPizza = strPizza + '<br/>Veggie Lovers ';
+        fltSub += fltSpecial;
+      break;
+    case 2:
+      strPizza = strPizza + '<br/>Hawaiin ';
+      fltSub += fltSpecial;
+      break;
+  }
+
+  // check to see which toppings are chosen
+  for (var i = 0; i < document.forms[0].chkTop.length; i++){
+    if (document.forms[0].chkTop[i].checked){
+      intTop = i;
+    }
+  }
+
+  // set the DHTML display to include the crust
+  switch(intTop){
+    case 0:
+      strPizza = strPizza + '<br/>Pepperoni ';
+      fltSub += fltTop;
+      break;
+    case 1:
+      strPizza = strPizza + '<br/>Italian Sausage ';
+        fltSub += fltTop;
+      break;
+    case 2:
+      strPizza = strPizza + '<br/>Canadian Bacon ';
+      fltSub += fltTop;
+      break;
+    case 3:
+      strPizza = strPizza + '<br/>Bell Pepper ';
+        fltSub += fltTop;
+      break;
+    case 4:
+      strPizza = strPizza + '<br/>Pineapple ';
+        fltSub += fltTop;
+      break;
+    case 5:
+      strPizza = strPizza + '<br/>Mushrooms ';
+        fltSub += fltTop;
+      break;
+  }
 
 
 	fltSub = fltSub.toFixed(2);
@@ -141,6 +204,38 @@ function changeOption(){
 
 }
 
+
+/*
+function hideOption()
+purpose:		Make the options invisible to user
+parameters:		none
+*/
+function hideSpecial(){
+	document.getElementById("specials").style.visibility = "hidden";
+
+	// uncheck and disable
+	for (var i = 0; i < document.forms[0].chkOption.length; i++){
+		document.forms[0].chkOption[i].checked = false;
+		document.forms[0].chkOption[i].disabled = true;
+	}
+
+	orderSummary();
+}
+
+function showSpecial(){
+	document.getElementById("specials").style.visibility = "visible";
+
+	// uncheck and disable
+	for (var i = 0; i < document.forms[0].chkOption.length; i++){
+		document.forms[0].chkOption[i].checked = false;
+		document.forms[0].chkOption[i].disabled = true;
+	}
+
+	orderSummary();
+}
+
+
+
 /*
 function hideOption()
 purpose:		Make the options invisible to user
@@ -157,6 +252,21 @@ function hideOption(){
 
 	orderSummary();
 }
+
+function showOption(){
+	document.getElementById("options").style.visibility = "visible";
+
+	// uncheck and disable
+	for (var i = 0; i < document.forms[0].chkOption.length; i++){
+		document.forms[0].chkOption[i].checked = false;
+		document.forms[0].chkOption[i].disabled = true;
+	}
+
+	orderSummary();
+}
+
+
+
 
 /*
 function ckform(formIndex)
