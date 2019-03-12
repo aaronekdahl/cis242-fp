@@ -25,7 +25,7 @@ function orderSummary(){
 	var fltSub = fltBase;
   var fltTop = 0;
   var fltSpecial = 0;
-  var intType= 0;//1;
+  var intBuild= 0;//1;
 	var intSize = 0;//1;
   var intCrust = 0;//1;
   var intTop = 0;//1;
@@ -39,14 +39,14 @@ function orderSummary(){
 	var intWhichSpec = 0;
 
 	// check to see which type of pizza is selected
-	for (var i = 0; i < document.forms[0].rdoType.length; i++){
-		if (document.forms[0].rdoType[i].checked){
-			intType = i;
+	for (var i = 0; i < document.forms[0].rdoBuild.length; i++){
+		if (document.forms[0].rdoBuild[i].checked){
+			intBuild = i;
 		}
 	}
 
 	// set the DHTML display to include the type
-	switch(intType){
+	switch(intBuild){
 		case 0:
 		  strPizza = strPizza + '<br/> Specialty ';
 		  break;
@@ -66,15 +66,15 @@ function orderSummary(){
 	switch(intSize){
 		case 0:
 		  strPizza = strPizza + '<br/>Small 12" ';
-		  fltSub += 1;
+		  fltSub += 1.00;
 		  break;
 		case 1:
 		  strPizza = strPizza + '<br/>Medium 14" ';
-		  fltSub = 2;
+		  fltSub += 2.00;
 		  break;
 		case 2:
 		  strPizza = strPizza + '<br/>Large 16" ';
-		  fltSub = 3;
+		  fltSub += 3.00;
 		  break;
 	}
 
@@ -89,22 +89,18 @@ function orderSummary(){
 	switch(intCrust){
 		case 0:
       strPizza = strPizza + '<br/>Hand-Tossed ';
-
-      fltSub += 0;
 		  break;
 		case 1:
 		  strPizza = strPizza + '<br/>Deep Dish ';
-      fltSub += 0;
 		  break;
 		case 2:
 		  strPizza = strPizza + '<br/>Crispy Thin Crust ';
-      fltSub += 0;
 		  break;
 	}
 
   // check to see which special is chosen
-  for (var i = 0; i < document.forms[0].chkSpecial.length; i++){
-    if (document.forms[0].chkSpecial[i].checked){
+  for (var i = 0; i < document.forms[0].rdoBuild.length; i++){
+    if (document.forms[0].rdoBuild[i].checked){
       intSpecial = i;
     }
   }
@@ -113,15 +109,12 @@ function orderSummary(){
   switch(intSpecial){
     case 0:
       strPizza = strPizza + '<br/>Meat Lovers ';
-      fltSub += 0;
       break;
     case 1:
       strPizza = strPizza + '<br/>Veggie Lovers ';
-      fltSub += 0;
       break;
     case 2:
       strPizza = strPizza + '<br/>Hawaiin ';
-      fltSub += 0;
       break;
   }
 
@@ -197,8 +190,6 @@ function changeOption(){
 	}
 
 	orderSummary();
-
-
 }
 
 
@@ -211,11 +202,11 @@ function hideSpecial(){
 	document.getElementById("specials").style.visibility = "hidden";
 
 	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkSpecial.length; i++){
+	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
 		//document.forms[0].chkSpecial[i].checked = false;
 		//document.forms[0].chkSpecial[i].disabled = true;
-    document.forms[0].chkSpecial[i].checked = true;
-		document.forms[0].chkSpecial[i].disabled = false;
+    document.forms[0].rdoSpecial[i].checked = true;
+		document.forms[0].rdoSpecial[i].disabled = false;
 	}
 
 	orderSummary();
@@ -225,9 +216,9 @@ function showSpecial(){
 	document.getElementById("specials").style.visibility = "visible";
 
 	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkSpecial.length; i++){
-		document.forms[0].chkSpecial[i].checked = false;
-		document.forms[0].chkSpecial[i].disabled = false;
+	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
+		document.forms[0].rdoSpecial[i].checked = false;
+		document.forms[0].rdoSpecial[i].disabled = false;
 	}
 
 	orderSummary();
@@ -288,24 +279,69 @@ function ckform(formIndex){
 				document.forms[formIndex].elements[i].focus();
 				return false;
 			}
+
 			strCustomer += document.forms[formIndex].elements[i].value + " ";
-			if (document.forms[formIndex].elements[i].name != "txtFName"){
+			if (document.forms[formIndex].elements[i].name != "txtFName") {
 				strCustomer += "<br />";
-			}
-		}
+        }
+
+      /*strCustomer +=document.forms[formIndex].elements[i].value + " ";
+  		i (document.forms[formIndex].elements[i].name != "txtLName") {
+  		strCustomer+= "<br />";
+      }
+
+      strCustomer+=document.forms[formIndex].elements[i].value + "";
+      if (document.forms[formIndex].elements[i].name!="txtEmail") {
+        strCustomer += "<br />";
+        }
+
+        strCustomer+=document.forms[formIndex].elements[i].value +" ";
+        if (document.forms[formIndex].elements[i].name!="txtAddress") {
+          strCustomer += "<br />";
+          }
+
+          strCustomer+=document.forms[formIndex].elements[i].value+ " ";
+          if (document.forms[formIndex].elements[i].name!="txtxtApartment") {
+            strCustomer += "<br />";
+            }
+
+            strCustomer+=document.forms[formIndex].elements[i].valu + " ";
+            if(document.forms[formIndex].elements[i].name!="txtCity") {
+              strCustomer += "<br />";
+              }
+
+              strCustomer+=document.forms[formIndex].elements[i].valu + " ";
+              if(document.forms[formIndex].elements[i].name!="txtState") {
+                strCustomer += "<br />";
+                }
+
+                strCustomer+=document.forms[formIndex].elements[i].valu + " ";
+                if(document.forms[formIndex].elements[i].name!="txtZip") {
+                  strCustomer += "<br />";
+                  }
+
+                  strCustomer+=document.forms[formIndex].elements[i].valu + " ";
+                  if(document.forms[formIndex].elements[i].name!="txtPhone") {
+                    strCustomer += "<br />";
+                  }*/
+
+        }
 	}
 
-	orderSummary();
+     	orderSummary();
+
+
 	// remove the value of the submit button from the string
 	strCustomer = strCustomer.slice(0, (strCustomer.length - 23));
 
 	SetCookie("Customer", strCustomer);
 
-
 	SetCookie("custFName", document.forms[0].txtFName.value);
 	SetCookie("custLName", document.forms[0].txtLName.value);
-
-
+  SetCookie("custEmail", document.forms[0].txtEmail.value);
+  SetCookie("custAddress", document.forms[0].txtAddress.value);
+  SetCookie("custCity", document.forms[0].txtCity.value);
+  SetCookie("custPhone", document.forms[0].txtPhone.value);
 
 	return true;
 }

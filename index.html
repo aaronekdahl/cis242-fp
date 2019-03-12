@@ -93,8 +93,8 @@
           <tr>
             <td valign="top">Select Pizza Build:</td>
             <td>
-              <input type="radio" name="rdoType" value="specials" onclick="showSpecial; hideOption(); return orderSummary();"/> Specials (Choose 1 of 3 Below)<br/>
-              <input type="radio" name="rdoType" value="build-your-own" onclick="hideSpecial; showOption(); return orderSummary();"/>  Build-Your-Own Pizza<br/>
+              <input type="radio" name="rdoBuild" value="specials" onclick="showSpecial; hideOption(); return orderSummary();"/> Specials (Choose 1 of 3 Below)<br/>
+              <input type="radio" name="rdoBuild" value="build-your-own" onclick="hideSpecial; showOption(); return orderSummary();"/>  Build-Your-Own Pizza<br/>
             </td>
           </tr>
 <!---end-pizza-type-selection--->
@@ -108,9 +108,9 @@
         <tr id="specials">
           <td valign="top">Select Specialty Pizza:</td>
           <td>
-            <input type="radio" name="chkSpecial" value="meat-lovers" onclick="return orderSummary()" /> Meat Lovers<br/>
-            <input type="radio" name="ckhSpecial" value="veggie-lovers" onclick="return orderSummary()"/> Veggie Lovers<br/>
-            <input type="radio" name="chkSpecial" value="hawaiin" onclick="return orderSummary()"/> Hawaiin<br/>
+            <input type="radio" name="rdoSpecial" value="meat-lovers" onclick="return orderSummary()" /> Meat Lovers<br/>
+            <input type="radio" name="rdoSpecial" value="veggie-lovers" onclick="return orderSummary()"/> Veggie Lovers<br/>
+            <input type="radio" name="rdoSpecial" value="hawaiin" onclick="return orderSummary()"/> Hawaiin<br/>
           </td>
         </tr>
 
