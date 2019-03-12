@@ -58,7 +58,22 @@
 <td valign="top" class="menu" width="1000">
   <form>
   <table class="menu" border="0" width="100%">
-<!---start-pizza-size-selection--->
+
+<!---start-pizza-type-selection-form-index-0--->
+              <tr>
+                <td valign="top">Select Pizza Build:</td>
+                <td>
+                  <input type="radio" name="rdoBuild" value="specials" onclick="return orderSummary();"/> Specials (Choose 1 of 3 Below)<br/>
+                  <input type="radio" name="rdoBuild" value="build-your-own" checked="checked" onclick="return orderSummary();"/>  Build-Your-Own Pizza<br/>
+                </td>
+              </tr>
+<!---end-pizza-type-selection--->
+
+<tr>
+  <td colspan="2"><hr style="background-color:white" /></td>
+</tr>
+
+<!---start-pizza-size-selection-form-index-1--->
       <tr>
         <td valign="top">Select Pizza Size:</td>
         <td valign="top" nowrap="nowrap">
@@ -78,26 +93,11 @@
         <td valign="top">Select Crust Type:</td>
         <td valign="top" nowrap="nowrap">
           <input type="radio" name="rdoCrust" value="hand-tossed" checked="checked" onclick="return orderSummary()"/> Hand-Tossed<br />
-          <input type="radio" name="rdoCrust" value="deep-dish"  onclick="return orderSummary()"/> Deep Dish<br/>
-          <input type="radio" name="rdoCrust" value="thin-crust"  onclick="return orderSummary()"/> Crispy Thin Crust<br/>
+          <input type="radio" name="rdoCrust" value="deep-dish"  onclick="return orderSummary()"/> Crispy Thin Crust<br/>
+          <input type="radio" name="rdoCrust" value="thin-crust"  onclick="return orderSummary()"/> Deep Dish<br/>
         </td>
       </tr>
 <!---end-pizza-crust-selection--->
-
-      <tr>
-        <td colspan="2"><hr style="background-color:white" /></td>
-      </tr>
-
-<!---start-pizza-type-selection--->
-
-          <tr>
-            <td valign="top">Select Pizza Build:</td>
-            <td>
-              <input type="radio" name="rdoBuild" value="specials" onclick="showSpecial; hideOption(); return orderSummary();"/> Specials (Choose 1 of 3 Below)<br/>
-              <input type="radio" name="rdoBuild" value="build-your-own" onclick="hideSpecial; showOption(); return orderSummary();"/>  Build-Your-Own Pizza<br/>
-            </td>
-          </tr>
-<!---end-pizza-type-selection--->
 
         <tr>
           <td colspan="2"><hr style="background-color:white" /></td>
@@ -108,9 +108,9 @@
         <tr id="specials">
           <td valign="top">Select Specialty Pizza:</td>
           <td>
-            <input type="radio" name="rdoSpecial" value="meat-lovers" onclick="return orderSummary()" /> Meat Lovers<br/>
-            <input type="radio" name="rdoSpecial" value="veggie-lovers" onclick="return orderSummary()"/> Veggie Lovers<br/>
-            <input type="radio" name="rdoSpecial" value="hawaiin" onclick="return orderSummary()"/> Hawaiin<br/>
+            <input type="radio" name="rdoSpecial" value="meat-lovers" onclick="return orderSummary()" /> Veggie Lovers<br/>
+            <input type="radio" name="rdoSpecial" value="veggie-lovers" onclick="return orderSummary()"/> Hawaiin<br/>
+            <input type="radio" name="rdoSpecial" value="hawaiin" onclick="return orderSummary()"/> Meat Lovers<br/>
           </td>
         </tr>
 

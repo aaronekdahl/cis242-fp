@@ -29,7 +29,7 @@ function orderSummary(){
 	var intSize = 0;//1;
   var intCrust = 0;//1;
   var intTop = 0;//1;
-  var intSpecial = 0;
+  var intSpecial;
 	var fltTax = 0;
 	var fltTotal = 0;
 	var intOptionCount = 0;
@@ -38,7 +38,8 @@ function orderSummary(){
 	var strPriceSum = "";
 	var intWhichSpec = 0;
 
-	// check to see which type of pizza is selected
+	/*---------------------------works--------------------------------*/
+  // check to see which type of pizza is selected
 	for (var i = 0; i < document.forms[0].rdoBuild.length; i++){
 		if (document.forms[0].rdoBuild[i].checked){
 			intBuild = i;
@@ -48,15 +49,17 @@ function orderSummary(){
 	// set the DHTML display to include the type
 	switch(intBuild){
 		case 0:
-		  strPizza = strPizza + '<br/> Specialty ';
+		  strPizza = strPizza + '<br/> Special ';
 		  break;
 		case 1:
 		  strPizza = strPizza + '<br/> Build-Your-Own ';
 		  break;
 	}
+  /*----------------------------------------------------------------*/
 
-	// check to see which size is chosen
-	for (var i = 0; i < document.forms[0].rdoSize.length; i++){
+/*---------------------------works--------------------------------*/
+  //check to see which size is chosen
+	for (var i = 0; i < document.forms[0].rdoSize.length; i++) {
 		if (document.forms[0].rdoSize[i].checked){
 			intSize = i;
 		}
@@ -66,18 +69,20 @@ function orderSummary(){
 	switch(intSize){
 		case 0:
 		  strPizza = strPizza + '<br/>Small 12" ';
-		  fltSub += 1.00;
+		  fltSub += 10.00;
 		  break;
 		case 1:
 		  strPizza = strPizza + '<br/>Medium 14" ';
-		  fltSub += 2.00;
+		  fltSub += 14.00;
 		  break;
 		case 2:
 		  strPizza = strPizza + '<br/>Large 16" ';
-		  fltSub += 3.00;
+		  fltSub += 18.00;
 		  break;
 	}
+/*----------------------------------------------------------------*/
 
+/*---------------------------works--------------------------------*/
   // check to see which crust is chosen
 	for (var i = 0; i < document.forms[0].rdoCrust.length; i++){
 		if (document.forms[0].rdoCrust[i].checked){
@@ -89,18 +94,24 @@ function orderSummary(){
 	switch(intCrust){
 		case 0:
       strPizza = strPizza + '<br/>Hand-Tossed ';
+      fltSub += 0;
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Deep Dish ';
+		  strPizza = strPizza + '<br/>Crispy Thin Crust ';
+      fltSub += 1;
 		  break;
 		case 2:
-		  strPizza = strPizza + '<br/>Crispy Thin Crust ';
+		  strPizza = strPizza + '<br/>Deep Dish ';
+      fltSub += 2;
 		  break;
 	}
+/*----------------------------------------------------------------*/
 
+
+/*---------------------------works--------------------------------*/
   // check to see which special is chosen
-  for (var i = 0; i < document.forms[0].rdoBuild.length; i++){
-    if (document.forms[0].rdoBuild[i].checked){
+  for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
+    if (document.forms[0].rdoSpecial[i].checked){
       intSpecial = i;
     }
   }
@@ -108,15 +119,19 @@ function orderSummary(){
   // set the DHTML display to include the special
   switch(intSpecial){
     case 0:
-      strPizza = strPizza + '<br/>Meat Lovers ';
+      strPizza = strPizza + '<br/>Veggie Lovers ';
+      fltSub += 1.50;
       break;
     case 1:
-      strPizza = strPizza + '<br/>Veggie Lovers ';
+      strPizza = strPizza + '<br/>Hawaiin ';
+      fltSub += 2;
       break;
     case 2:
-      strPizza = strPizza + '<br/>Hawaiin ';
+      strPizza = strPizza + '<br/>Meat Lovers ';
+      fltSub += 3;
       break;
   }
+/*----------------------------------------------------------------*/
 
   // check to see which toppings are chosen
   for (var i = 0; i < document.forms[0].chkTop.length; i++){
