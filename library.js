@@ -25,12 +25,11 @@ function orderSummary(){
 	var fltSub = fltBase;
   var fltTop = 0;
   var fltSpecial = 0;
-  var intType= 1;
-	var intSize = 1;
-  var intCrust = 1;
-  var intTop = 1;
-  var intSpecial= 0;
-	var intWarranty = 0;
+  var intType= 0;//1;
+	var intSize = 0;//1;
+  var intCrust = 0;//1;
+  var intTop = 0;//1;
+  var intSpecial = 0;
 	var fltTax = 0;
 	var fltTotal = 0;
 	var intOptionCount = 0;
@@ -67,15 +66,15 @@ function orderSummary(){
 	switch(intSize){
 		case 0:
 		  strPizza = strPizza + '<br/>Small 12" ';
-		  fltSub = 12.95;
+		  fltSub += 1;
 		  break;
 		case 1:
 		  strPizza = strPizza + '<br/>Medium 14" ';
-		  fltSub = 16.95;
+		  fltSub = 2;
 		  break;
 		case 2:
 		  strPizza = strPizza + '<br/>Large 16" ';
-		  fltSub = 20.95;
+		  fltSub = 3;
 		  break;
 	}
 
@@ -89,19 +88,23 @@ function orderSummary(){
 	// set the DHTML display to include the crust
 	switch(intCrust){
 		case 0:
-		  strPizza = strPizza + '<br/>Deep Dish ';
+      strPizza = strPizza + '<br/>Hand-Tossed ';
+
+      fltSub += 0;
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Hand-Tossed ';
+		  strPizza = strPizza + '<br/>Deep Dish ';
+      fltSub += 0;
 		  break;
 		case 2:
 		  strPizza = strPizza + '<br/>Crispy Thin Crust ';
+      fltSub += 0;
 		  break;
 	}
 
   // check to see which special is chosen
-  for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
-    if (document.forms[0].rdoSpecial[i].checked){
+  for (var i = 0; i < document.forms[0].chkSpecial.length; i++){
+    if (document.forms[0].chkSpecial[i].checked){
       intSpecial = i;
     }
   }
@@ -110,15 +113,15 @@ function orderSummary(){
   switch(intSpecial){
     case 0:
       strPizza = strPizza + '<br/>Meat Lovers ';
-      fltSub += fltSpecial;
+      fltSub += 0;
       break;
     case 1:
       strPizza = strPizza + '<br/>Veggie Lovers ';
-        fltSub += fltSpecial;
+      fltSub += 0;
       break;
     case 2:
       strPizza = strPizza + '<br/>Hawaiin ';
-      fltSub += fltSpecial;
+      fltSub += 0;
       break;
   }
 
@@ -133,27 +136,21 @@ function orderSummary(){
   switch(intTop){
     case 0:
       strPizza = strPizza + '<br/>Pepperoni ';
-      fltSub += fltTop;
       break;
     case 1:
       strPizza = strPizza + '<br/>Italian Sausage ';
-        fltSub += fltTop;
       break;
     case 2:
       strPizza = strPizza + '<br/>Canadian Bacon ';
-      fltSub += fltTop;
       break;
     case 3:
       strPizza = strPizza + '<br/>Bell Pepper ';
-        fltSub += fltTop;
       break;
     case 4:
       strPizza = strPizza + '<br/>Pineapple ';
-        fltSub += fltTop;
       break;
     case 5:
       strPizza = strPizza + '<br/>Mushrooms ';
-        fltSub += fltTop;
       break;
   }
 
@@ -194,9 +191,9 @@ function changeOption(){
 	document.getElementById("options").style.visibility = "visible";
 
 	// uncheck and enable
-	for (var i = 0; i < document.forms[0].chkOption.length; i++){
-		document.forms[0].chkOption[i].checked = false;
-		document.forms[0].chkOption[i].disabled = false;
+	for (var i = 0; i < document.forms[0].chkTop.length; i++){
+		document.forms[0].chkTop[i].checked = false;
+		document.forms[0].chkTop[i].disabled = false;
 	}
 
 	orderSummary();
@@ -214,9 +211,11 @@ function hideSpecial(){
 	document.getElementById("specials").style.visibility = "hidden";
 
 	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkOption.length; i++){
-		document.forms[0].chkOption[i].checked = false;
-		document.forms[0].chkOption[i].disabled = true;
+	for (var i = 0; i < document.forms[0].chkSpecial.length; i++){
+		//document.forms[0].chkSpecial[i].checked = false;
+		//document.forms[0].chkSpecial[i].disabled = true;
+    document.forms[0].chkSpecial[i].checked = true;
+		document.forms[0].chkSpecial[i].disabled = false;
 	}
 
 	orderSummary();
@@ -226,9 +225,9 @@ function showSpecial(){
 	document.getElementById("specials").style.visibility = "visible";
 
 	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkOption.length; i++){
-		document.forms[0].chkOption[i].checked = false;
-		document.forms[0].chkOption[i].disabled = true;
+	for (var i = 0; i < document.forms[0].chkSpecial.length; i++){
+		document.forms[0].chkSpecial[i].checked = false;
+		document.forms[0].chkSpecial[i].disabled = false;
 	}
 
 	orderSummary();
@@ -245,9 +244,9 @@ function hideOption(){
 	document.getElementById("options").style.visibility = "hidden";
 
 	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkOption.length; i++){
-		document.forms[0].chkOption[i].checked = false;
-		document.forms[0].chkOption[i].disabled = true;
+	for (var i = 0; i < document.forms[0].chkTop.length; i++){
+		document.forms[0].chkTop[i].checked = false;
+		document.forms[0].chkTop[i].disabled = true;
 	}
 
 	orderSummary();
@@ -257,9 +256,9 @@ function showOption(){
 	document.getElementById("options").style.visibility = "visible";
 
 	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkOption.length; i++){
-		document.forms[0].chkOption[i].checked = false;
-		document.forms[0].chkOption[i].disabled = true;
+	for (var i = 0; i < document.forms[0].chkTop.length; i++){
+		document.forms[0].chkTop[i].checked = false;
+		document.forms[0].chkTop[i].disabled = false;
 	}
 
 	orderSummary();
@@ -368,7 +367,7 @@ parameters:		none
 ---------------------------------------------- */
 function writePCCookies(){
 
-	SetCookie("PCDesc", document.getElementById("orderSum").innerHTML);
+	SetCookie("pizzaDesc", document.getElementById("orderSum").innerHTML);
 	SetCookie("PriceSum", document.getElementById("priceSum").innerHTML);
 	window.location.href = "custInfo.html";
 
@@ -444,7 +443,7 @@ author:
 parameters:		none
 ---------------------------------------------- */
 // 1800 seconds in 30 minutes
-var seconds = 30*24*3600;
+var seconds = 2700;
 // seconds set at 20 for testing
 //var seconds = 20;
 
@@ -459,14 +458,14 @@ function secondPassed() {
 // Finally how many seconds left after removing days, hours and minutes.
    var secs = Math.floor((seconds - (days * 86400 ) - (hours *3600 ) - (minutes*60)))
 
-   var x = days + " Days " + hours + " Hours " + minutes + " Minutes and " + secs + " Seconds ";
+   var x = minutes + " Minutes and " + secs + " Seconds ";
    document.getElementById('countdown').innerHTML = x;
 
 
-	// create an alternate display if PC has not arrived
+	// create an alternate display if pizza has not arrived
 	if (seconds == 0) {
    	clearInterval(countdownTimer);
-      document.getElementById('countdown').innerHTML = "Please call us, your PC should have arrived!";
+      document.getElementById('countdown').innerHTML = "Please call us, your pizza should have arrived!";
    }
 	else {
    	seconds--;

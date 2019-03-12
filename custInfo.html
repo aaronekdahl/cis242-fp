@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PC Order</title>
+<title>Boxcar Pizza Company</title>
        <meta name="author" content="EDCC" />
        <meta name="keywords" content="final project 'PC Superstore', based on wireframe" />
        <meta name="description" content="This template is intended to be used as a base to build my PC Superstore web page." />
        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
        <meta name="robots" content="none" />
-	   <link rel="stylesheet" href="pcStyle.css" type="text/css" />
+	   <link rel="stylesheet" href="pizzaStyle.css" type="text/css" />
 		<script type="text/javascript" src="cookies.js"></script>
 		<script type="text/javascript" src="library.js"></script>
 
@@ -22,18 +22,25 @@
 		<td width="1"></td>
 		<td></td>
 	</tr>
-	<tr>
-		<td colspan="2">
-			<img src="graphics/pc.jpeg" width="238" height="120" alt="" border="0">
-		</td>
-		<td valign="bottom" class="header">PCSuperstoreExample.com Louis HO</td>
-		<td width="1px">&nbsp;</td>
-		<td width="300" valign="bottom" class="contact">
-			5555 West Elm St.<br />
-			Lynnwood, WA 98026<br />
-			425.555.5791
-		</td>
-	</tr>
+  <!---start-header--->
+  	<tr>
+  		<td colspan="2">
+        <img src="images/pizza.jpg"  height="130" alt="" border="0">
+  		</td>
+  		<td valign="bottom" class="header">Boxcar Pizza Company</td>
+  		<td width="1px">&nbsp;</td>
+  		<td width="300" valign="bottom" class="contact">
+  			1460 E US Highway 377<br />
+  			Granbury, TX 76048<br />
+  			817.579.7777
+  		</td>
+  	</tr>
+  	<tr>
+  		<td colspan="6">
+  			<hr style="background-color:white" />
+  		</td>
+  	</tr>
+  <!---end-header--->
 	<tr>
 		<td colspan="6">
 			<hr style="background-color:white" />
@@ -41,9 +48,9 @@
 	</tr>
 	<tr>
 		<td rowspan="2" valign="top" nowrap="nowrap" class="orderSum">
-			<a href="home.html" class="orderSum">Home</a><br />
-			<a href="contact.html" class="orderSum">Contact Us</a><br />
-			<a href="order.html" class="orderSum">Order Now</a>
+			<a href="index.html" class="orderSum">Home</a><br />
+			<a href="custinfo.html" class="orderSum">Customer Information</a><br />
+			<a href="summary.html" class="orderSum">Order Summary</a>
 		</td>
 		<td rowspan="2" width="1" style="background-color: White;"></td>
 
@@ -54,7 +61,7 @@
 					<td style="padding-left:35px;">
 						Your Current
 						<script type="text/javascript">
-							document.write(GetCookie("PCDesc"));
+							document.write(GetCookie("pizzaDesc"));
 						</script>
 					</td>
 					<td style="padding-right:35px;">
@@ -93,7 +100,7 @@
 
 
 				<tr>
-					<td colspan="10" align="center"><br /><br /><input type="submit" name="cmdSubmit" value="Order your PC" /></td>
+					<td colspan="10" align="center"><br /><br /><input type="submit" name="cmdSubmit" value="Order your Pizza" /></td>
 				</tr>
 			</table>
 

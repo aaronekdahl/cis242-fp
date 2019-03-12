@@ -36,7 +36,7 @@
 //
 function checkCookie(){
     var cookieEnabled = navigator.cookieEnabled;
-    if (cookieEnabled){ 
+    if (cookieEnabled){
         document.cookie = "testcookie";
         cookieEnabled = document.cookie.indexOf("testcookie")!=-1;
     }
@@ -58,7 +58,7 @@ function getCookieVal (offset) {
 // the cookie does not exist.
 //
 function GetCookie(name) {
-	
+
 if (checkCookie())
 	{
    var arg = name + "=";
@@ -135,4 +135,4 @@ function DeleteCookie (name) {
    exp.setTime (exp.getTime() - 1); // This cookie is history
    var cval = GetCookie (name);
    document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
-} 
+}
