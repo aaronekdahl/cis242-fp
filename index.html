@@ -63,8 +63,8 @@
               <tr>
                 <td valign="top">Select Pizza Build:</td>
                 <td>
-                  <input type="radio" name="rdoBuild" value="specials" onclick="return orderSummary();"/> Specials (Choose 1 of 3 Below)<br/>
-                  <input type="radio" name="rdoBuild" value="build-your-own" checked="checked" onclick="return orderSummary();"/>  Build-Your-Own Pizza<br/>
+                  <input type="radio" name="rdoBuild" value="build-your-own" onclick="showToppings(); return hideSpecial(); return orderSummary();"/> Build-Your-Own Pizza<br/>
+                  <input type="radio" name="rdoBuild" value="specials"  onclick="return hideToppings(); return showSpecial(); return orderSummary();"/>  Specials (Choose 1 of 3 Below)<br/>
                 </td>
               </tr>
 <!---end-pizza-type-selection--->
@@ -77,7 +77,7 @@
       <tr>
         <td valign="top">Select Pizza Size:</td>
         <td valign="top" nowrap="nowrap">
-          <input type="radio" name="rdoSize" value="small" checked="checked" onclick="return orderSummary()"/> Small (12")<br/>
+          <input type="radio" name="rdoSize" value="small" onclick="return orderSummary()"/> Small (12")<br/>
           <input type="radio" name="rdoSize" value="medium"  onclick="return orderSummary()"/> Medium (14")<br/>
           <input type="radio" name="rdoSize" value="large"  onclick="return orderSummary()"/> Large (16")<br/>
         </td>
@@ -92,7 +92,7 @@
       <tr>
         <td valign="top">Select Crust Type:</td>
         <td valign="top" nowrap="nowrap">
-          <input type="radio" name="rdoCrust" value="hand-tossed" checked="checked" onclick="return orderSummary()"/> Hand-Tossed<br />
+          <input type="radio" name="rdoCrust" value="hand-tossed" onclick="return orderSummary()"/> Hand-Tossed<br />
           <input type="radio" name="rdoCrust" value="deep-dish"  onclick="return orderSummary()"/> Crispy Thin Crust<br/>
           <input type="radio" name="rdoCrust" value="thin-crust"  onclick="return orderSummary()"/> Deep Dish<br/>
         </td>
@@ -122,7 +122,7 @@
 
 <!---start-pizza-toppings-selection--->
 
-        <tr id="options">
+        <tr id="toppings">
           <td valign="top">Select Pizza Toppings:</td>
           <td>
             <input type="checkbox" name="chkTop" value="pepperoni" onclick="return orderSummary()" /> Pepperoni<br/>

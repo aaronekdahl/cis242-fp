@@ -12,7 +12,7 @@ var OptionPrice = [
 ];
 
 var fltBase = 0.0;
-var fltTop = 2.0;
+//var fltTop = 2.0;
 var fltTaxRate = 0.095;
 
 /*
@@ -23,12 +23,12 @@ parameters:		none
 function orderSummary(){
 
 	var fltSub = fltBase;
-  var fltTop = 0;
-  var fltSpecial = 0;
-  var intBuild= 0;//1;
-	var intSize = 0;//1;
-  var intCrust = 0;//1;
-  var intTop = 0;//1;
+  var fltTop;
+  var fltSpecial;
+  var intBuild;
+	var intSize;
+  var intCrust;
+  var intTop;
   var intSpecial;
 	var fltTax = 0;
 	var fltTotal = 0;
@@ -49,10 +49,10 @@ function orderSummary(){
 	// set the DHTML display to include the type
 	switch(intBuild){
 		case 0:
-		  strPizza = strPizza + '<br/> Special ';
+		  strPizza = strPizza + '<br/>Build-Your-Own ';
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/> Build-Your-Own ';
+		  strPizza = strPizza + '<br/>Special ';
 		  break;
 	}
   /*----------------------------------------------------------------*/
@@ -134,7 +134,7 @@ function orderSummary(){
 /*----------------------------------------------------------------*/
 
   // check to see which toppings are chosen
-  for (var i = 0; i < document.forms[0].chkTop.length; i++){
+  for (var i = 0; i < document.forms[0].chkTop.length; i++) {
     if (document.forms[0].chkTop[i].checked){
       intTop = i;
     }
@@ -144,9 +144,11 @@ function orderSummary(){
   switch(intTop){
     case 0:
       strPizza = strPizza + '<br/>Pepperoni ';
+      fltSub += .75;
       break;
     case 1:
       strPizza = strPizza + '<br/>Italian Sausage ';
+      fltSub += .75;
       break;
     case 2:
       strPizza = strPizza + '<br/>Canadian Bacon ';
@@ -189,28 +191,10 @@ function orderSummary(){
 
 }
 
-/*
-function changeOption()
-purpose:		Make the options visible to user
-parameters:		none
-*/
-
-function changeOption(){
-	document.getElementById("options").style.visibility = "visible";
-
-	// uncheck and enable
-	for (var i = 0; i < document.forms[0].chkTop.length; i++){
-		document.forms[0].chkTop[i].checked = false;
-		document.forms[0].chkTop[i].disabled = false;
-	}
-
-	orderSummary();
-}
-
-
+/*---------------------------almost-works--------------------------------*/
 /*
 function hideOption()
-purpose:		Make the options invisible to user
+purpose:		Make the toppings invisible to user
 parameters:		none
 */
 function hideSpecial(){
@@ -218,10 +202,20 @@ function hideSpecial(){
 
 	// uncheck and disable
 	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
-		//document.forms[0].chkSpecial[i].checked = false;
-		//document.forms[0].chkSpecial[i].disabled = true;
-    document.forms[0].rdoSpecial[i].checked = true;
-		document.forms[0].rdoSpecial[i].disabled = false;
+		document.forms[0].rdoSpecial[i].checked = false;
+		document.forms[0].rdoSpecial[i].disabled = true;
+	}
+
+	orderSummary();
+}
+
+function hideToppings(){
+	document.getElementById("toppings").style.visibility = "hidden";
+
+	// uncheck and disable
+	for (var i = 0; i < document.forms[0].chkTop.length; i++){
+		document.forms[0].chkTop[i].checked = false;
+		document.forms[0].chkTop[i].disabled = true;
 	}
 
 	orderSummary();
@@ -239,27 +233,8 @@ function showSpecial(){
 	orderSummary();
 }
 
-
-
-/*
-function hideOption()
-purpose:		Make the options invisible to user
-parameters:		none
-*/
-function hideOption(){
-	document.getElementById("options").style.visibility = "hidden";
-
-	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkTop.length; i++){
-		document.forms[0].chkTop[i].checked = false;
-		document.forms[0].chkTop[i].disabled = true;
-	}
-
-	orderSummary();
-}
-
-function showOption(){
-	document.getElementById("options").style.visibility = "visible";
+function showToppings(){
+	document.getElementById("toppings").style.visibility = "visible";
 
 	// uncheck and disable
 	for (var i = 0; i < document.forms[0].chkTop.length; i++){
@@ -269,9 +244,7 @@ function showOption(){
 
 	orderSummary();
 }
-
-
-
+/*----------------------------------------------------------------*/
 
 /*
 function ckform(formIndex)
