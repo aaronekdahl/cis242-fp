@@ -28,7 +28,7 @@ function orderSummary(){
   var intBuild;
 	var intSize;
   var intCrust;
-  var intTop;
+  var fltTop;
   var intSpecial;
 	var fltTax = 0;
 	var fltTotal = 0;
@@ -140,7 +140,7 @@ function orderSummary(){
     }
   }
 
-  // set the DHTML display to include the crust
+  // set the DHTML display to include the toppings
   switch(intTop) {
     case 0:
       strPizza = strPizza + '<br/>Pepperoni ';
@@ -228,6 +228,22 @@ function enableToppings() {
 
   orderSummary();
 }
+
+/*----------------------------------------------------------------*/
+
+/*-----------------------------in-work----------------------------*/
+/*
+function toppingPrice() {
+  fltTop = .75;
+  var toppings = [pepperoni, italian-sausage, canadian-bacon, bell-pepper, pinapple, mushrooms];
+
+  for (var i = 0; i < document.forms[0].chkTop.length; i++) {
+    if (document.forms[0].chkTop[i].checked){
+      intTop = i;
+    }
+
+  document.getElementById("orderSum").innerHTML = toppingtstrSummary;
+*/
 
 /*----------------------------------------------------------------*/
 
