@@ -63,8 +63,8 @@
               <tr>
                 <td valign="top">Select Pizza Build:</td>
                 <td>
-                  <input type="radio" name="rdoBuild" value="build-your-own" onclick="showToppings(); return hideSpecial(); return orderSummary();"/> Build-Your-Own Pizza<br/>
-                  <input type="radio" name="rdoBuild" value="specials"  onclick="return hideToppings(); return showSpecial(); return orderSummary();"/>  Specials (Choose 1 of 3 Below)<br/>
+                  <input type="radio" name="rdoBuild" value="build-your-own" onclick="return orderSummary();"/> Build-Your-Own Pizza<br/>
+                  <input type="radio" name="rdoBuild" value="specials"  onclick="return orderSummary();"/>  Specials (Choose 1 of 3 Below)<br/>
                 </td>
               </tr>
 <!---end-pizza-type-selection--->
@@ -125,12 +125,12 @@
         <tr id="toppings">
           <td valign="top">Select Pizza Toppings:</td>
           <td>
-            <input type="checkbox" name="chkTop" value="pepperoni" onclick="return orderSummary()" /> Pepperoni<br/>
-            <input type="checkbox" name="chkTop" value="italian-sausage" onclick="return orderSummary()"/> Italian Sausage<br/>
-            <input type="checkbox" name="chkTop" value="canadian-bacon" onclick="return orderSummary()"/> Canadian Bacon<br/>
-            <input type="checkbox" name="chkTop" value="bell-pepper" onclick="return orderSummary()"/> Bell Pepper<br/>
-            <input type="checkbox" name="chkTop" value="pineapple" onclick="return orderSummary()"/> Pineapple<br/>
-            <input type="checkbox" name="chkTop" value="mushrooms" onclick="return orderSummary()"/> Mushrooms<br/>
+            <input type="checkbox" class="chkTop" name="chkTop" value="pepperoni" onclick="return orderSummary()" /> Pepperoni<br/>
+            <input type="checkbox" class="chkTop" name="chkTop" value="italian-sausage" onclick="return orderSummary()"/> Italian Sausage<br/>
+            <input type="checkbox" class="chkTop" name="chkTop" value="canadian-bacon" onclick="return orderSummary()"/> Canadian Bacon<br/>
+            <input type="checkbox" class="chkTop" name="chkTop" value="bell-pepper" onclick="return orderSummary()"/> Bell Pepper<br/>
+            <input type="checkbox" class="chkTop" name="chkTop" value="pineapple" onclick="return orderSummary()"/> Pineapple<br/>
+            <input type="checkbox" class="chkTop" name="chkTop" value="mushrooms" onclick="return orderSummary()"/> Mushrooms<br/>
           </td>
         </tr>
 <!---end-pizza-toppings-selection--->
@@ -157,7 +157,7 @@
 <!---start-submit-form--->
 	<tr>
 		<td valign="top" class="menu" width="1000px">
-			<center><input type="button" onclick="return writePCCookies()" value="Submit Your Order"></center>
+			<center><input type="button" onclick="return writePizzaCookies()" value="Submit Your Order"></center>
 		</td>
 	</tr>
   <!---end-submit-form--->

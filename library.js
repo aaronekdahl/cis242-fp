@@ -133,22 +133,20 @@ function orderSummary(){
   }
 /*----------------------------------------------------------------*/
 
-  // check to see which toppings are chosen
+// check to see which toppings are chosen
   for (var i = 0; i < document.forms[0].chkTop.length; i++) {
     if (document.forms[0].chkTop[i].checked){
-      intTop = i;
+      intTop
     }
   }
 
   // set the DHTML display to include the crust
-  switch(intTop){
+  switch(intTop) {
     case 0:
       strPizza = strPizza + '<br/>Pepperoni ';
-      fltSub += .75;
       break;
     case 1:
       strPizza = strPizza + '<br/>Italian Sausage ';
-      fltSub += .75;
       break;
     case 2:
       strPizza = strPizza + '<br/>Canadian Bacon ';
@@ -198,7 +196,7 @@ purpose:		Make the toppings invisible to user
 parameters:		none
 */
 function hideSpecial(){
-	document.getElementById("specials").style.visibility = "visible";
+	document.getElementById("specials").style.visibility = "hidden";
 
 	// uncheck and disable
 	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
@@ -209,6 +207,7 @@ function hideSpecial(){
 	orderSummary();
 }
 
+/*
 function hideToppings(){
 	document.getElementById("toppings").style.visibility = "visible";
 
@@ -406,9 +405,9 @@ parameters:		none
 ---------------------------------------------- */
 function chForm(){
 	var intNumFields = document.forms[0].elements.length;
-	var phoneExp = /\d\d\d-\d\d\d-\d\d\d\d/;
+	var phoneExp = /^(\d{3})(\d{3})(\d{4})$/;
 	var zipExp = /\d{5}/;
-	var emailExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	// check that values have been entered into required fields
 	for (var i = 0; i < intNumFields; i++){
@@ -484,7 +483,6 @@ function secondPassed() {
 
    var x = minutes + " Minutes and " + secs + " Seconds ";
    document.getElementById('countdown').innerHTML = x;
-
 
 	// create an alternate display if pizza has not arrived
 	if (seconds == 0) {
