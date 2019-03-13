@@ -3,25 +3,27 @@
 <head>
 <title>Boxcar Pizza Company</title>
        <meta name="author" content="EDCC" />
-       <meta name="keywords" content="final project 'PC Superstore', based on wireframe" />
-       <meta name="description" content="This template is intended to be used as a base to build my PC Superstore web page." />
+       <meta name="keywords" content="final project 'BoxcarPizza', based on wireframe" />
+       <meta name="description" content="This template is intended to be used as a base to build my pizza order web page." />
        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
        <meta name="robots" content="none" />
 	   <link rel="stylesheet" href="pizzaStyle.css" type="text/css" />
-		<script type="text/javascript" src="cookies.js"></script>
 		<script type="text/javascript" src="library.js"></script>
+		<script type="text/javascript" src="cookies.js"></script>
 
 </head>
+
 <body>
 <table name="main" cellpadding="5" width="100%" border="0">
 	<tr>
 		<td width="100"></td>
 		<td></td>
-		<td width="1"></td>
 		<td></td>
-		<td width="1"></td>
+		<td></td>
+		<td></td>
 		<td></td>
 	</tr>
+
   <!---start-header--->
   	<tr>
   		<td colspan="2">
@@ -46,15 +48,18 @@
 			<hr style="background-color:white" />
 		</td>
 	</tr>
+
+<!---start-site-navigation--->
 	<tr>
 		<td rowspan="2" valign="top" nowrap="nowrap" class="orderSum">
 			<a href="index.html" class="orderSum">Home</a><br />
 			<a href="custinfo.html" class="orderSum">Customer Information</a><br />
 			<a href="summary.html" class="orderSum">Order Summary</a>
 		</td>
+
 		<td rowspan="2" width="1" style="background-color: White;"></td>
 
-		<td valign="top" class="menu" width="1000">
+		<td valign="top" class="menu" width="1000px">
 
 			<table class="menu" border="0" width="100%">
 				<tr>
@@ -129,6 +134,11 @@
           <td id="txtPhone" style="color:white;font-weight:bold; font-size: smaller"></td>
         </tr>
 <!--new-customer-info-end--->
+
+<script type="text/javascript">
+  GetCookie("customerForm");
+  setCookie("customerForm", null)
+</script>
 
 
 				<tr>

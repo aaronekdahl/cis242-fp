@@ -198,7 +198,7 @@ purpose:		Make the toppings invisible to user
 parameters:		none
 */
 function hideSpecial(){
-	document.getElementById("specials").style.visibility = "hidden";
+	document.getElementById("specials").style.visibility = "visible";
 
 	// uncheck and disable
 	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
@@ -210,7 +210,7 @@ function hideSpecial(){
 }
 
 function hideToppings(){
-	document.getElementById("toppings").style.visibility = "hidden";
+	document.getElementById("toppings").style.visibility = "visible";
 
 	// uncheck and disable
 	for (var i = 0; i < document.forms[0].chkTop.length; i++){
@@ -384,12 +384,12 @@ function replaceString(stringValue){
 }
 
 /* ----------------------------------------------
-function writePCCookies(){
-purpose:	writes the PC information cookies
+function writePizzaCookies(){
+purpose:	writes the pizza information cookies
 author:
 parameters:		none
 ---------------------------------------------- */
-function writePCCookies(){
+function writePizzaCookies(){
 
 	SetCookie("pizzaDesc", document.getElementById("orderSum").innerHTML);
 	SetCookie("PriceSum", document.getElementById("priceSum").innerHTML);
