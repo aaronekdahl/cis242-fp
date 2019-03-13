@@ -4,7 +4,7 @@
 <title>Boxcar Pizza Company</title>
        <meta name="author" content="EDCC" />
        <meta name="keywords" content="final project 'PC Superstore', based on wireframe" />
-       <meta name="description" content="This template is intended to be used as a base to build my PC Superstore web page." />
+       <meta name="description" content="This template is intended to be used as a base to build my pizza order web page." />
        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
        <meta name="robots" content="none" />
 	   <link rel="stylesheet" href="pizzaStyle.css" type="text/css" />
@@ -20,41 +20,47 @@ getCookie("customerForm")
 </head>
 
 <body style="color:white"  onLoad="secondPassed()">
+  <table name="main" cellpadding="5" width="100%" border="0">
+  	<tr>
+  		<td width="100"></td>
+  		<td></td>
+  		<td></td>
+  		<td></td>
+  		<td></td>
+  		<td></td>
+  	</tr>
 
 <form action="summary.html" onsubmit="return orderSummary()">
 <table name="main" cellpadding="5" width="100%" border="0">
   <!---start-header--->
-  	<tr>
-  		<td colspan="2">
-        <img src="images/pizza.jpg"  height="130" alt="" border="0">
-  		</td>
-  		<td valign="bottom" class="header">Boxcar Pizza Company</td>
-  		<td width="1px">&nbsp;</td>
-  		<td width="300" valign="bottom" class="contact">
-  			1460 E US Highway 377<br />
-  			Granbury, TX 76048<br />
-  			817.579.7777
-  		</td>
-  	</tr>
-  	<tr>
-  		<td colspan="6">
-  			<hr style="background-color:white" />
-  		</td>
-  	</tr>
+  <tr>
+    <td colspan="2">
+      <img src="images/pizza.jpg"  height="130" alt="" border="0">
+    </td>
+    <td valign="bottom" class="header">Boxcar Pizza Company</td>
+    <td width="1px">&nbsp;</td>
+    <td width="300" valign="bottom" class="contact">
+      1460 E US Highway 377<br />
+      Granbury, TX 76048<br />
+      817.579.7777
+    </td>
+  </tr>
   <!---end-header--->
+
 	<tr>
 		<td colspan="5">
 			<hr style="background-color:white" />
 		</td>
 	</tr>
+
 	<tr>
-		<td rowspan="1" valign="top">
+		<td rowspan="2" valign="top" nowrap="nowrap" class="orderSum">
 			<a href="index.html" class="orderSum">Home</a><br />
 			<a href="custinfo.html" class="orderSum">Customer Information</a><br />
 			<a href="summary.html" class="orderSum">Order Summary</a>
 		</td>
-		<td style="background-color:white" rowspan="3">&nbsp;</td>
-		<td valign="top" class="menu">
+		<td rowspan="2" width="1" style="background-color:white" rowspan="2">&nbsp;</td>
+		<td valign="top" class="menu" width="1000px">
 <h2>Thank you for ordering from BoxcarPizza.com</h2>
 <div style="padding-left:50px">
 <p>Your order will be to you within</p><p id="countdown" class="timer" style="text-align:center;"></p>
