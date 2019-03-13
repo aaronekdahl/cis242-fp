@@ -29,6 +29,7 @@ function orderSummary(){
 	var intSize;
   var intCrust;
   var fltTop;
+  var intTop;
   var intSpecial;
 	var fltTax = 0;
 	var fltTotal = 0;
