@@ -232,18 +232,32 @@ function enableToppings() {
 
 /*----------------------------------------------------------------*/
 
-/*-----------------------------in-work----------------------------*/
+/*-----------------append-topping-price-in-work--------------------*/
+
 /*
-function toppingPrice() {
-  fltTop = .75;
-  var toppings = [pepperoni, italian-sausage, canadian-bacon, bell-pepper, pinapple, mushrooms];
+<script type="text/javascript">
+   var appendedText = "";
+   function AnswerWrong(){
+     var txt = 'Wrong Answer!';
+     var newtext = document.createTextNode(txt);
+     var appendedText = window.document.body.appendChild(newtext);
+	}
+   function AnswerRight(){
+     var txt = 'RIGHT ANSWER!';
+     var newtext = document.createTextNode(txt);
+     var appendedText = window.document.body.appendChild(newtext);
+	    }
+   </script>
 
-  for (var i = 0; i < document.forms[0].chkTop.length; i++) {
-    if (document.forms[0].chkTop[i].checked){
-      intTop = i;
-    }
+<form name="formButtons">
+<p> <input type="button" onclick="AnswerRight();this.disabled=true;" name="button1" value="1 little pig" /></p>
+<p> <input type="button" onclick="AnswerWrong();this.disabled=true;" name="button2" value="2 little pigs" /></p>
+<p> <input type="button" onclick="AnswerWrong();this.disabled=true;" name="button3" value="3 little pigs" /></p>
+<p>
+<input type="button" value="Reload Page" onclick="window.location.reload()"/>
+</p>
+</form>
 
-  document.getElementById("orderSum").innerHTML = toppingtstrSummary;
 */
 
 /*----------------------------------------------------------------*/
