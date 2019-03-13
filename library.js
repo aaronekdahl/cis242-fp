@@ -136,7 +136,7 @@ function orderSummary(){
 // check to see which toppings are chosen
   for (var i = 0; i < document.forms[0].chkTop.length; i++) {
     if (document.forms[0].chkTop[i].checked){
-      intTop
+      intTop = i;
     }
   }
 
@@ -230,6 +230,8 @@ function enableToppings() {
 }
 
 /*----------------------------------------------------------------*/
+
+
 
 /*
 function ckform(formIndex)
