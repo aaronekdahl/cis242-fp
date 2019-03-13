@@ -52,7 +52,7 @@ function orderSummary(){
 		  strPizza = strPizza + '<br/>Build-Your-Own ';
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Special ';
+		  strPizza = strPizza + '<br/>Specialty ';
 		  break;
 	}
   /*----------------------------------------------------------------*/
@@ -189,60 +189,46 @@ function orderSummary(){
 
 }
 
-/*---------------------------almost-works--------------------------------*/
-/*
-function hideOption()
-purpose:		Make the toppings invisible to user
-parameters:		none
-*/
-function hideSpecial(){
-	document.getElementById("specials").style.visibility = "hidden";
+/*---------------------------works--------------------------------*/
 
-	// uncheck and disable
-	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
-		document.forms[0].rdoSpecial[i].checked = false;
-		document.forms[0].rdoSpecial[i].disabled = true;
-	}
+function disableSpecials() {
+  document.getElementById("spec1").disabled = true;
+  document.getElementById("spec2").disabled = true;
+  document.getElementById("spec3").disabled = true;
 
-	orderSummary();
+  orderSummary();
 }
 
-/*
-function hideToppings(){
-	document.getElementById("toppings").style.visibility = "visible";
+function disableToppings() {
+  document.getElementById("chk1").disabled = true;
+  document.getElementById("chk2").disabled = true;
+  document.getElementById("chk3").disabled = true;
+  document.getElementById("chk4").disabled = true;
+  document.getElementById("chk5").disabled = true;
+  document.getElementById("chk6").disabled = true;
 
-	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkTop.length; i++){
-		document.forms[0].chkTop[i].checked = false;
-		document.forms[0].chkTop[i].disabled = true;
-	}
-
-	orderSummary();
+  orderSummary();
 }
 
-function showSpecial(){
-	document.getElementById("specials").style.visibility = "visible";
+function enableSpecials() {
+  document.getElementById("spec1").disabled = false;
+  document.getElementById("spec2").disabled = false;
+  document.getElementById("spec3").disabled = false;
 
-	// uncheck and disable
-	for (var i = 0; i < document.forms[0].rdoSpecial.length; i++){
-		document.forms[0].rdoSpecial[i].checked = false;
-		document.forms[0].rdoSpecial[i].disabled = false;
-	}
-
-	orderSummary();
+  orderSummary();
 }
 
-function showToppings(){
-	document.getElementById("toppings").style.visibility = "visible";
+function enableToppings() {
+  document.getElementById("chk1").disabled = false;
+  document.getElementById("chk2").disabled = false;
+  document.getElementById("chk3").disabled = false;
+  document.getElementById("chk4").disabled = false;
+  document.getElementById("chk5").disabled = false;
+  document.getElementById("chk6").disabled = false;
 
-	// uncheck and disable
-	for (var i = 0; i < document.forms[0].chkTop.length; i++){
-		document.forms[0].chkTop[i].checked = false;
-		document.forms[0].chkTop[i].disabled = false;
-	}
-
-	orderSummary();
+  orderSummary();
 }
+
 /*----------------------------------------------------------------*/
 
 /*

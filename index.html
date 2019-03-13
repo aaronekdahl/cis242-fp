@@ -63,8 +63,8 @@
               <tr>
                 <td valign="top">Select Pizza Build:</td>
                 <td>
-                  <input type="radio" name="rdoBuild" value="build-your-own" onclick="return orderSummary();"/> Build-Your-Own Pizza<br/>
-                  <input type="radio" name="rdoBuild" value="specials"  onclick="return orderSummary();"/>  Specials (Choose 1 of 3 Below)<br/>
+                  <input type="radio" name="rdoBuild" value="build-your-own" onclick="disableSpecials(); enableToppings(); return orderSummary();"/> Build-Your-Own Pizza<br/>
+                  <input type="radio" name="rdoBuild" value="specials"  onclick="enableSpecials(); disableToppings(); return orderSummary();"/>  Specials (Choose 1 of 3 Below)<br/>
                 </td>
               </tr>
 <!---end-pizza-type-selection--->
@@ -108,9 +108,9 @@
         <tr id="specials">
           <td valign="top">Select Specialty Pizza:</td>
           <td>
-            <input type="radio" name="rdoSpecial" value="meat-lovers" onclick="return orderSummary()" /> Veggie Lovers<br/>
-            <input type="radio" name="rdoSpecial" value="veggie-lovers" onclick="return orderSummary()"/> Hawaiin<br/>
-            <input type="radio" name="rdoSpecial" value="hawaiin" onclick="return orderSummary()"/> Meat Lovers<br/>
+            <input type="radio" id="spec1" name="rdoSpecial" value="meat-lovers" onclick="return orderSummary()" /> Veggie Lovers<br/>
+            <input type="radio" id="spec2"  name="rdoSpecial" value="veggie-lovers" onclick="return orderSummary()"/> Hawaiin<br/>
+            <input type="radio" id="spec3"  name="rdoSpecial" value="hawaiin" onclick="return orderSummary()"/> Meat Lovers<br/>
           </td>
         </tr>
 
@@ -125,12 +125,12 @@
         <tr id="toppings">
           <td valign="top">Select Pizza Toppings:</td>
           <td>
-            <input type="checkbox" class="chkTop" name="chkTop" value="pepperoni" onclick="return orderSummary()" /> Pepperoni<br/>
-            <input type="checkbox" class="chkTop" name="chkTop" value="italian-sausage" onclick="return orderSummary()"/> Italian Sausage<br/>
-            <input type="checkbox" class="chkTop" name="chkTop" value="canadian-bacon" onclick="return orderSummary()"/> Canadian Bacon<br/>
-            <input type="checkbox" class="chkTop" name="chkTop" value="bell-pepper" onclick="return orderSummary()"/> Bell Pepper<br/>
-            <input type="checkbox" class="chkTop" name="chkTop" value="pineapple" onclick="return orderSummary()"/> Pineapple<br/>
-            <input type="checkbox" class="chkTop" name="chkTop" value="mushrooms" onclick="return orderSummary()"/> Mushrooms<br/>
+            <input type="checkbox" id="chk1" class="chkTop" name="chkTop" value="pepperoni" onclick="return orderSummary()" /> Pepperoni<br/>
+            <input type="checkbox" id="chk2" class="chkTop" name="chkTop" value="italian-sausage" onclick="return orderSummary()"/> Italian Sausage<br/>
+            <input type="checkbox" id="chk3" class="chkTop" name="chkTop" value="canadian-bacon" onclick="return orderSummary()"/> Canadian Bacon<br/>
+            <input type="checkbox" id="chk4" class="chkTop" name="chkTop" value="bell-pepper" onclick="return orderSummary()"/> Bell Pepper<br/>
+            <input type="checkbox" id="chk5" class="chkTop" name="chkTop" value="pineapple" onclick="return orderSummary()"/> Pineapple<br/>
+            <input type="checkbox" id="chk6" class="chkTop" name="chkTop" value="mushrooms" onclick="return orderSummary()"/> Mushrooms<br/>
           </td>
         </tr>
 <!---end-pizza-toppings-selection--->
