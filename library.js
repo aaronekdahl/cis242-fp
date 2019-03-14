@@ -100,6 +100,12 @@ function orderSummary(){
 	}
 /*----------------------------------------------------------------*/
 
+for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+        if (document.forms[0].chkTop[0].checked) {
+            fltSub += parseFloat(document.forms[0].chkTop[0].value);
+        }
+    }
+
 
 /*---------------------------works--------------------------------*/
   // check to see which special is chosen
@@ -125,6 +131,8 @@ function orderSummary(){
       break;
   }
 /*----------------------------------------------------------------*/
+
+  /*---------------------mostly-works-----------------------*/
 
 // check to see which toppings are chosen
   for (var i = 0; i < document.forms[0].chkTop.length; i++) {
@@ -154,37 +162,7 @@ function orderSummary(){
       strPizza = strPizza + '<br/>Mushrooms ';
       break;
   }
-
-  /*---------------------In-Work!-----------------------*/
-
-/*
-
-  var top-price = new Array();
-  top-price["pepperoni"]=1;
-  top-price["italian-sausage"]=1;
-  top-price["canadian-bacon"]=1;
-  top-price["bell-pepper"]=.75;
-  top-price["pineapple"]=.75;
-  top-price["mushrooms"]=.75;
-
-  function getToppingPrice() {
-    var topPrice = 0;
-    var theForm = document.forms["menu"];
-    var chkTop = theForm.elements["chkTop"];
-
-    for(var i = 0; i < chkTop.length; i++) {
-        //if the radio button is checked
-        if(chkTop[i].checked) {
-            topPrice = top-price[chkTop[i].value];
-            break;
-        }
-    }
-    return topPrice;
-}
-
-*/
-
-/*-------------------------------------------------*/
+	/*----------------------------------------------------------------*/
 
 
 	fltSub = fltSub.toFixed(2);
@@ -255,32 +233,32 @@ function enableToppings() {
 
 /*----------------------------------------------------------------*/
 
-/*-----------------append-topping-price-in-work--------------------*/
+/*----------------------------in-work-------------------------------*/
 
-/*
-<script type="text/javascript">
-   var appendedText = "";
-   function AnswerWrong(){
-     var txt = 'Wrong Answer!';
-     var newtext = document.createTextNode(txt);
-     var appendedText = window.document.body.appendChild(newtext);
-	}
-   function AnswerRight(){
-     var txt = 'RIGHT ANSWER!';
-     var newtext = document.createTextNode(txt);
-     var appendedText = window.document.body.appendChild(newtext);
-	    }
-   </script>
 
-<form name="formButtons">
-<p> <input type="button" onclick="AnswerRight();this.disabled=true;" name="button1" value="1 little pig" /></p>
-<p> <input type="button" onclick="AnswerWrong();this.disabled=true;" name="button2" value="2 little pigs" /></p>
-<p> <input type="button" onclick="AnswerWrong();this.disabled=true;" name="button3" value="3 little pigs" /></p>
-<p>
-<input type="button" value="Reload Page" onclick="window.location.reload()"/>
-</p>
-</form>
+/*  function getToppingPrice() {
 
+		var tPrice = new Array();
+		tPrice["pepperoni"]=1;
+		tPrice["italian-sausage"]=1;
+		tPrice["canadian-bacon"]=1;
+		tPrice["bell-pepper"]=.75;
+		tPrice["pineapple"]=.75;
+		tPrice["mushrooms"]=.75;
+
+    var topPrice = 0;
+    var pizzaForm = document.forms["menu"];
+    var chkTop = pizzaForm.elements["chkTop"];
+
+    for(var i = 0; i < chkTop.length; i++) {
+        if(chkTop[i].checked) {
+            topPrice = tPrice[chkTop[i].value];
+            break;
+        }
+    }
+    return topPrice;
+		orderSummary();
+}
 */
 
 /*----------------------------------------------------------------*/
