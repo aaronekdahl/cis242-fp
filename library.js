@@ -2,17 +2,9 @@
 testing area for javascript functions
 */
 
-var OptionPrice = [
-    250.00,
-    50.00,
-    30.00,
-    200.00,
-    100.00,
-    500.00
-];
+//var OptionPrice = [.75, .75, .75, .75, .75, .75];
 
 var fltBase = 0.0;
-//var fltTop = 2.0;
 var fltTaxRate = 0.095;
 
 /*
@@ -162,6 +154,37 @@ function orderSummary(){
       strPizza = strPizza + '<br/>Mushrooms ';
       break;
   }
+
+  /*---------------------In-Work!-----------------------*/
+
+/*
+
+  var top-price = new Array();
+  top-price["pepperoni"]=1;
+  top-price["italian-sausage"]=1;
+  top-price["canadian-bacon"]=1;
+  top-price["bell-pepper"]=.75;
+  top-price["pineapple"]=.75;
+  top-price["mushrooms"]=.75;
+
+  function getToppingPrice() {
+    var topPrice = 0;
+    var theForm = document.forms["menu"];
+    var chkTop = theForm.elements["chkTop"];
+
+    for(var i = 0; i < chkTop.length; i++) {
+        //if the radio button is checked
+        if(chkTop[i].checked) {
+            topPrice = top-price[chkTop[i].value];
+            break;
+        }
+    }
+    return topPrice;
+}
+
+*/
+
+/*-------------------------------------------------*/
 
 
 	fltSub = fltSub.toFixed(2);
