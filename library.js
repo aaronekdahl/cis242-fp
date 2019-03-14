@@ -100,11 +100,51 @@ function orderSummary(){
 	}
 /*----------------------------------------------------------------*/
 
-for (var i = 0; i < document.forms[0].chkTop.length; i++); {
-        if (document.forms[0].chkTop[0].checked) {
-            fltSub += parseFloat(document.forms[0].chkTop[0].value);
-        }
-    }
+/*check whether topping has been selected and collect its value*/
+
+		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+        		if (document.forms[0].chkTop[0].checked) {
+            		fltSub += parseFloat(document.forms[0].chkTop[0].value);
+								strPizza = strPizza + '<br/>Pepperoni ';
+        		}
+    		}
+
+		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+		        if (document.forms[0].chkTop[1].checked) {
+		            fltSub += parseFloat(document.forms[0].chkTop[1].value);
+								strPizza = strPizza + '<br/>Italian Sausage ';
+		        }
+		    }
+
+		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+		        if (document.forms[0].chkTop[2].checked) {
+		            fltSub += parseFloat(document.forms[0].chkTop[2].value);
+								strPizza = strPizza + '<br/>Canadian Bacon ';
+		        }
+		    }
+
+		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+		        if (document.forms[0].chkTop[3].checked) {
+		            fltSub += parseFloat(document.forms[0].chkTop[3].value);
+								strPizza = strPizza + '<br/>Bell Pepper ';
+		        }
+		    }
+
+		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+						if (document.forms[0].chkTop[4].checked) {
+								fltSub += parseFloat(document.forms[0].chkTop[4].value);
+								strPizza = strPizza + '<br/>Pineapple ';
+						}
+				}
+
+		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
+						if (document.forms[0].chkTop[5].checked) {
+								fltSub += parseFloat(document.forms[0].chkTop[5].value);
+								strPizza = strPizza + '<br/>Mushrooms ';
+						}
+				}
+
+/*----------------------------------------------------------------*/
 
 
 /*---------------------------works--------------------------------*/
@@ -135,7 +175,7 @@ for (var i = 0; i < document.forms[0].chkTop.length; i++); {
   /*---------------------mostly-works-----------------------*/
 
 // check to see which toppings are chosen
-  for (var i = 0; i < document.forms[0].chkTop.length; i++) {
+  /*for (var i = 0; i < document.forms[0].chkTop.length; i++) {
     if (document.forms[0].chkTop[i].checked){
       intTop = i;
     }
