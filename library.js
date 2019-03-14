@@ -350,7 +350,7 @@ function writePizzaCookies(){
 
 	SetCookie("pizzaDesc", document.getElementById("orderSum").innerHTML);
 	SetCookie("PriceSum", document.getElementById("priceSum").innerHTML);
-	window.location.href = "custInfo.html";
+	window.location.href = "info.html";
 
 	return true;
 }
