@@ -1,8 +1,11 @@
 /*
-testing area for javascript functions
+aaron ekdahl
+cis242
+final-project
+03/13/2019
 */
 
-//var OptionPrice = [.75, .75, .75, .75, .75, .75];
+
 
 var fltBase = 0.0;
 var fltTaxRate = 0.095;
@@ -61,15 +64,15 @@ function orderSummary(){
 	// set the DHTML display to include the size
 	switch(intSize){
 		case 0:
-		  strPizza = strPizza + '<br/>Small 12" ';
+		  strPizza = strPizza + '<br/>Small 12" ' + "($10.00)";
 		  fltSub += 10.00;
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Medium 14" ';
+		  strPizza = strPizza + '<br/>Medium 14" ' + "($14.00)";
 		  fltSub += 14.00;
 		  break;
 		case 2:
-		  strPizza = strPizza + '<br/>Large 16" ';
+		  strPizza = strPizza + '<br/>Large 16" ' + "($18.00)";
 		  fltSub += 18.00;
 		  break;
 	}
@@ -86,61 +89,62 @@ function orderSummary(){
 	// set the DHTML display to include the crust
 	switch(intCrust){
 		case 0:
-      strPizza = strPizza + '<br/>Hand-Tossed ';
+      strPizza = strPizza + '<br/>Hand-Tossed ' + "(Included)";
       fltSub += 0;
 		  break;
 		case 1:
-		  strPizza = strPizza + '<br/>Crispy Thin Crust ';
+		  strPizza = strPizza + '<br/>Crispy Thin Crust ' + "($1.00)";
       fltSub += 1;
 		  break;
 		case 2:
-		  strPizza = strPizza + '<br/>Deep Dish ';
+		  strPizza = strPizza + '<br/>Deep Dish ' + "($2.00)";
       fltSub += 2;
 		  break;
 	}
 /*----------------------------------------------------------------*/
 
+/*---------------------------works--------------------------------*/
 /*check whether topping has been selected and collect its value*/
 
 		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
         		if (document.forms[0].chkTop[0].checked) {
             		fltSub += parseFloat(document.forms[0].chkTop[0].value);
-								strPizza = strPizza + '<br/>Pepperoni ';
+								strPizza = strPizza + '<br/>Pepperoni ' + "($1.00)";
         		}
     		}
 
 		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
 		        if (document.forms[0].chkTop[1].checked) {
 		            fltSub += parseFloat(document.forms[0].chkTop[1].value);
-								strPizza = strPizza + '<br/>Italian Sausage ';
+								strPizza = strPizza + '<br/>Italian Sausage ' + "($1.00)";
 		        }
 		    }
 
 		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
 		        if (document.forms[0].chkTop[2].checked) {
 		            fltSub += parseFloat(document.forms[0].chkTop[2].value);
-								strPizza = strPizza + '<br/>Canadian Bacon ';
+								strPizza = strPizza + '<br/>Canadian Bacon ' + "($1.00)";
 		        }
 		    }
 
 		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
 		        if (document.forms[0].chkTop[3].checked) {
 		            fltSub += parseFloat(document.forms[0].chkTop[3].value);
-								strPizza = strPizza + '<br/>Bell Pepper ';
+								strPizza = strPizza + '<br/>Bell Pepper ' + "($0.75)";
 		        }
 		    }
 
 		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
 						if (document.forms[0].chkTop[4].checked) {
 								fltSub += parseFloat(document.forms[0].chkTop[4].value);
-								strPizza = strPizza + '<br/>Pineapple ';
+								strPizza = strPizza + '<br/>Pineapple ' + "($0.75)";
 						}
 				}
 
 		for (var i = 0; i < document.forms[0].chkTop.length; i++); {
 						if (document.forms[0].chkTop[5].checked) {
 								fltSub += parseFloat(document.forms[0].chkTop[5].value);
-								strPizza = strPizza + '<br/>Mushrooms ';
+								strPizza = strPizza + '<br/>Mushrooms ' + "($0.75)";
 						}
 				}
 
@@ -171,39 +175,6 @@ function orderSummary(){
       break;
   }
 /*----------------------------------------------------------------*/
-
-  /*---------------------mostly-works-----------------------*/
-
-// check to see which toppings are chosen
-  /*for (var i = 0; i < document.forms[0].chkTop.length; i++) {
-    if (document.forms[0].chkTop[i].checked){
-      intTop = i;
-    }
-  }
-
-  // set the DHTML display to include the toppings
-  switch(intTop) {
-    case 0:
-      strPizza = strPizza + '<br/>Pepperoni ';
-      break;
-    case 1:
-      strPizza = strPizza + '<br/>Italian Sausage ';
-      break;
-    case 2:
-      strPizza = strPizza + '<br/>Canadian Bacon ';
-      break;
-    case 3:
-      strPizza = strPizza + '<br/>Bell Pepper ';
-      break;
-    case 4:
-      strPizza = strPizza + '<br/>Pineapple ';
-      break;
-    case 5:
-      strPizza = strPizza + '<br/>Mushrooms ';
-      break;
-  }
-	/*----------------------------------------------------------------*/
-
 
 	fltSub = fltSub.toFixed(2);
 
@@ -273,38 +244,6 @@ function enableToppings() {
 
 /*----------------------------------------------------------------*/
 
-/*----------------------------in-work-------------------------------*/
-
-
-/*  function getToppingPrice() {
-
-		var tPrice = new Array();
-		tPrice["pepperoni"]=1;
-		tPrice["italian-sausage"]=1;
-		tPrice["canadian-bacon"]=1;
-		tPrice["bell-pepper"]=.75;
-		tPrice["pineapple"]=.75;
-		tPrice["mushrooms"]=.75;
-
-    var topPrice = 0;
-    var pizzaForm = document.forms["menu"];
-    var chkTop = pizzaForm.elements["chkTop"];
-
-    for(var i = 0; i < chkTop.length; i++) {
-        if(chkTop[i].checked) {
-            topPrice = tPrice[chkTop[i].value];
-            break;
-        }
-    }
-    return topPrice;
-		orderSummary();
-}
-*/
-
-/*----------------------------------------------------------------*/
-
-
-
 /*
 function ckform(formIndex)
 purpose:		verify that required fields are completed
@@ -331,48 +270,7 @@ function ckform(formIndex){
 			if (document.forms[formIndex].elements[i].name != "txtFName") {
 				strCustomer += "<br />";
         }
-
-      /*strCustomer +=document.forms[formIndex].elements[i].value + " ";
-  		i (document.forms[formIndex].elements[i].name != "txtLName") {
-  		strCustomer+= "<br />";
       }
-
-      strCustomer+=document.forms[formIndex].elements[i].value + "";
-      if (document.forms[formIndex].elements[i].name!="txtEmail") {
-        strCustomer += "<br />";
-        }
-
-        strCustomer+=document.forms[formIndex].elements[i].value +" ";
-        if (document.forms[formIndex].elements[i].name!="txtAddress") {
-          strCustomer += "<br />";
-          }
-
-          strCustomer+=document.forms[formIndex].elements[i].value+ " ";
-          if (document.forms[formIndex].elements[i].name!="txtxtApartment") {
-            strCustomer += "<br />";
-            }
-
-            strCustomer+=document.forms[formIndex].elements[i].valu + " ";
-            if(document.forms[formIndex].elements[i].name!="txtCity") {
-              strCustomer += "<br />";
-              }
-
-              strCustomer+=document.forms[formIndex].elements[i].valu + " ";
-              if(document.forms[formIndex].elements[i].name!="txtState") {
-                strCustomer += "<br />";
-                }
-
-                strCustomer+=document.forms[formIndex].elements[i].valu + " ";
-                if(document.forms[formIndex].elements[i].name!="txtZip") {
-                  strCustomer += "<br />";
-                  }
-
-                  strCustomer+=document.forms[formIndex].elements[i].valu + " ";
-                  if(document.forms[formIndex].elements[i].name!="txtPhone") {
-                    strCustomer += "<br />";
-                  }*/
-
-        }
 	}
 
      	orderSummary();
